@@ -5,6 +5,7 @@ pandas==2.2.2
 numpy==1.26.4
 PyYAML==6.0.2
 pymongo==4.8.0
+pymongo[srv]==4.8.0
 dnspython==2.6.1
 
 # Machine learning
