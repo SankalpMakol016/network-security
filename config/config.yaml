@@ -1,0 +1,8 @@
+database:
+  name: network_security
+  collection: network_logs
+
+paths:
+  raw_data: data/raw/network_data.csv
+  processed_data: data/processed/processed_data.csv
+  model: saved_models/model.pkl

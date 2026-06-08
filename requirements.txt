@@ -1,0 +1,39 @@
+python-dotenv==1.0.1
+
+# Data processing and ETL
+pandas==2.2.2
+numpy==1.26.4
+PyYAML==6.0.2
+pymongo==4.8.0
+dnspython==2.6.1
+
+# Machine learning
+scikit-learn==1.5.1
+imbalanced-learn==0.12.3
+xgboost==2.1.1
+joblib==1.4.2
+
+# Visualization and notebooks
+matplotlib==3.9.2
+seaborn==0.13.2
+jupyter==1.0.0
+
+# API and app serving
+fastapi==0.112.2
+uvicorn==0.30.6
+python-multipart==0.0.9
+
+# MLOps and experiment tracking
+mlflow==2.15.1
+dvc==3.55.2
+
+# Cloud and deployment helpers
+boto3==1.35.10
+
+# Testing and code quality
+pytest==8.3.2
+mypy==1.11.1
+flake8==7.1.1
+
+# Local package install
+-e .
