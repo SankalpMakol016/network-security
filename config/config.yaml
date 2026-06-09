@@ -4,5 +4,10 @@ database:
 
 paths:
   raw_data: data/raw/network_data.csv
+  train_data: data/processed/train.csv
+  test_data: data/processed/test.csv
   processed_data: data/processed/processed_data.csv
   model: saved_models/model.pkl
+
+data_ingestion:
+  test_size: 0.2
