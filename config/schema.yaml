@@ -1,3 +1,63 @@
-columns: {}
+columns:
+  having_IP_Address:
+    dtype: int
+  URL_Length:
+    dtype: int
+  Shortining_Service:
+    dtype: int
+  having_At_Symbol:
+    dtype: int
+  double_slash_redirecting:
+    dtype: int
+  Prefix_Suffix:
+    dtype: int
+  having_Sub_Domain:
+    dtype: int
+  SSLfinal_State:
+    dtype: int
+  Domain_registeration_length:
+    dtype: int
+  Favicon:
+    dtype: int
+  port:
+    dtype: int
+  HTTPS_token:
+    dtype: int
+  Request_URL:
+    dtype: int
+  URL_of_Anchor:
+    dtype: int
+  Links_in_tags:
+    dtype: int
+  SFH:
+    dtype: int
+  Submitting_to_email:
+    dtype: int
+  Abnormal_URL:
+    dtype: int
+  Redirect:
+    dtype: int
+  on_mouseover:
+    dtype: int
+  RightClick:
+    dtype: int
+  popUpWidnow:
+    dtype: int
+  Iframe:
+    dtype: int
+  age_of_domain:
+    dtype: int
+  DNSRecord:
+    dtype: int
+  web_traffic:
+    dtype: int
+  Page_Rank:
+    dtype: int
+  Google_Index:
+    dtype: int
+  Links_pointing_to_page:
+    dtype: int
+  Statistical_report:
+    dtype: int
 
-target_column: label
+target_column: Result

@@ -9,3 +9,13 @@ class DataIngestionConfig:
     train_data_path: str
     test_data_path: str
     test_size: float
+
+
+@dataclass
+class DataValidationConfig:
+    train_data_path: str
+    test_data_path: str
+    schema_path: str
+    validation_report_path: str
+    drift_p_value_threshold: float
+    missing_value_threshold: float

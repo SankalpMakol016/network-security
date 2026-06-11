@@ -11,3 +11,8 @@ paths:
 
 data_ingestion:
   test_size: 0.2
+
+data_validation:
+  validation_report_path: artifacts/data_validation/validation_report.json
+  drift_p_value_threshold: 0.05
+  missing_value_threshold: 0.0

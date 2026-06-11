@@ -8,8 +8,8 @@ from networksecurity.components.model_trainer import ModelTrainer
 
 class TrainingPipeline:
     def run(self) -> None:
-        DataIngestion().initiate_data_ingestion()
-        DataValidation().initiate_data_validation()
+        data_ingestion_artifact = DataIngestion().initiate_data_ingestion()
+        DataValidation(data_ingestion_artifact=data_ingestion_artifact).initiate_data_validation()
         DataTransformation().initiate_data_transformation()
         ModelTrainer().initiate_model_training()
         ModelEvaluation().initiate_model_evaluation()
