@@ -9,8 +9,12 @@ from networksecurity.components.model_trainer import ModelTrainer
 class TrainingPipeline:
     def run(self) -> None:
         data_ingestion_artifact = DataIngestion().initiate_data_ingestion()
-        DataValidation(data_ingestion_artifact=data_ingestion_artifact).initiate_data_validation()
-        DataTransformation().initiate_data_transformation()
-        ModelTrainer().initiate_model_training()
-        ModelEvaluation().initiate_model_evaluation()
-        ModelPusher().initiate_model_pusher()
+        data_validation_artifact = DataValidation(
+            data_ingestion_artifact=data_ingestion_artifact,
+        ).initiate_data_validation()
+        DataTransformation(
+            data_validation_artifact=data_validation_artifact,
+        ).initiate_data_transformation()
+        #ModelTrainer().initiate_model_training()
+        #ModelEvaluation().initiate_model_evaluation()
+        #ModelPusher().initiate_model_pusher()

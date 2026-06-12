@@ -14,3 +14,12 @@ class DataValidationArtifact:
     is_valid: bool
     train_data_path: str
     test_data_path: str
+
+
+@dataclass
+class DataTransformationArtifact:
+    transformed_train_path: str
+    transformed_test_path: str
+    preprocessor_path: str
+    train_data_path: str
+    test_data_path: str

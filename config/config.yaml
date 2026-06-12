@@ -16,3 +16,10 @@ data_validation:
   validation_report_path: artifacts/data_validation/validation_report.json
   drift_p_value_threshold: 0.05
   missing_value_threshold: 0.0
+
+data_transformation:
+  transformed_train_path: data/processed/transformed_train.csv
+  transformed_test_path: data/processed/transformed_test.csv
+  preprocessor_path: artifacts/preprocessor/preprocessor.pkl
+  apply_smote: true
+  smote_random_state: 42
