@@ -37,3 +37,4 @@ class ModelEvaluationArtifact:
     evaluation_report_path: str
     trained_model_path: str
     is_acceptable: bool
+

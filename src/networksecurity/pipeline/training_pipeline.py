@@ -2,7 +2,6 @@ from networksecurity.components.data_ingestion import DataIngestion
 from networksecurity.components.data_transformation import DataTransformation
 from networksecurity.components.data_validation import DataValidation
 from networksecurity.components.model_evaluation import ModelEvaluation
-from networksecurity.components.model_pusher import ModelPusher
 from networksecurity.components.model_trainer import ModelTrainer
 
 
@@ -18,7 +17,7 @@ class TrainingPipeline:
         model_trainer_artifact = ModelTrainer(
             data_transformation_artifact=data_transformation_artifact,
         ).initiate_model_training()
-        ModelEvaluation(
+        model_evaluation_artifact=ModelEvaluation(
             model_trainer_artifact=model_trainer_artifact,
         ).initiate_model_evaluation()
-        #ModelPusher().initiate_model_pusher()
+        

@@ -25,9 +25,10 @@ data_transformation:
   smote_random_state: 42
 
 model_training:
-  trained_model_path: saved_models/model.pkl
+  trained_model_path: artifacts/saved_model/model.pkl
 
 model_evaluation:
   evaluation_report_path: artifacts/model_evaluation/evaluation_report.json
   min_accuracy_threshold: 0.85
   min_f1_threshold: 0.85
+

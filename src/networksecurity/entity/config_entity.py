@@ -51,3 +51,4 @@ class ModelEvaluationConfig:
     evaluation_report_path: str
     min_accuracy_threshold: float
     min_f1_threshold: float
+
