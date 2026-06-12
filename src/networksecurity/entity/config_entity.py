@@ -31,3 +31,23 @@ class DataTransformationConfig:
     preprocessor_path: str
     apply_smote: bool
     smote_random_state: int
+
+
+@dataclass
+class ModelTrainerConfig:
+    transformed_train_path: str
+    transformed_test_path: str
+    schema_path: str
+    model_config_path: str
+    trained_model_path: str
+
+
+@dataclass
+class ModelEvaluationConfig:
+    transformed_train_path: str
+    transformed_test_path: str
+    schema_path: str
+    trained_model_path: str
+    evaluation_report_path: str
+    min_accuracy_threshold: float
+    min_f1_threshold: float

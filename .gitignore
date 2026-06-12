@@ -17,3 +17,5 @@ prediction_output/*
 !prediction_output/.gitkeep
 
 .vscode/
+src/networksecurity.egg-info
+mlruns

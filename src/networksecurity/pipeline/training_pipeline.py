@@ -12,9 +12,13 @@ class TrainingPipeline:
         data_validation_artifact = DataValidation(
             data_ingestion_artifact=data_ingestion_artifact,
         ).initiate_data_validation()
-        DataTransformation(
+        data_transformation_artifact = DataTransformation(
             data_validation_artifact=data_validation_artifact,
         ).initiate_data_transformation()
-        #ModelTrainer().initiate_model_training()
-        #ModelEvaluation().initiate_model_evaluation()
+        model_trainer_artifact = ModelTrainer(
+            data_transformation_artifact=data_transformation_artifact,
+        ).initiate_model_training()
+        ModelEvaluation(
+            model_trainer_artifact=model_trainer_artifact,
+        ).initiate_model_evaluation()
         #ModelPusher().initiate_model_pusher()
