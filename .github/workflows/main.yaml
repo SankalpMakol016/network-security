@@ -26,54 +26,34 @@ jobs:
           pip install -r requirements.txt
 
   build-and-push-ecr-image:
+    name: Build and Push Docker Image
+    needs: integration
+    runs-on: ubuntu-latest
 
-  name: Build and Push Docker Image
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-  needs: integration
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
-  runs-on: ubuntu-latest
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
 
-  steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-    - name: Checkout Code
-
-      uses: actions/checkout@v4
-
-    - name: Configure AWS Credentials
-
-      uses: aws-actions/configure-aws-credentials@v4
-
-      with:
-
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
-        aws-region: ${{ secrets.AWS_REGION }}
-
-    - name: Login to Amazon ECR
-
-      id: login-ecr
-
-      uses: aws-actions/amazon-ecr-login@v2
-
-    - name: Set up Docker Buildx
-
-      uses: docker/setup-buildx-action@v3
-
-    - name: Build and Push AMD64 Docker Image
-
-      run: |
-
-        docker buildx build \
-
-          --platform linux/amd64 \
-
-          -t ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest \
-
-          --push \
-
-          .
+      - name: Build and Push AMD64 Docker Image
+        run: |
+          docker buildx build \
+            --platform linux/amd64 \
+            -t ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest \
+            --push \
+            .
 
   Continuous-Deployment:
     name: Continuous Deployment
@@ -92,7 +72,6 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Login to Amazon ECR
-        id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
 
       - name: Pull Latest Docker Image
@@ -108,6 +87,6 @@ jobs:
       - name: Run Docker Container
         run: |
           docker run -d \
-          --name network-security \
-          -p 8080:8080 \
-          ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+            --name network-security \
+            -p 8080:8080 \
+            ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
