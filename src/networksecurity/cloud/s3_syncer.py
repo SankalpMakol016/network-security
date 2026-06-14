@@ -2,24 +2,25 @@ import subprocess
 
 
 class S3Syncer:
-    def sync_folder_to_s3(self, folder_path: str, bucket_name: str, s3_path: str) -> None:
+
+    def sync_folder_to_s3(self,folder_path: str,aws_bucket_url: str) -> None:
         command = [
             "aws",
             "s3",
             "sync",
             folder_path,
-            f"s3://{bucket_name}/{s3_path}"
+            aws_bucket_url
         ]
         subprocess.run(command, check=True)
-        print(f"Syncing {folder_path} to s3://{bucket_name}/{s3_path}")
+        print(f"Synced {folder_path} -> {aws_bucket_url}")
 
-    def sync_folder_from_s3(self, folder_path: str, bucket_name: str, s3_path: str) -> None:
+    def sync_folder_from_s3(self,folder_path: str,aws_bucket_url: str) -> None:
         command = [
             "aws",
             "s3",
             "sync",
-            f"s3://{bucket_name}/{s3_path}",
+            aws_bucket_url,
             folder_path
         ]
         subprocess.run(command, check=True)
-        print(f"Syncing s3://{bucket_name}/{s3_path} to {folder_path}")
+        print(f"Synced {aws_bucket_url} -> {folder_path}")
