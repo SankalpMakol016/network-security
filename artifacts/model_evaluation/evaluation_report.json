@@ -1,0 +1,28 @@
+{
+    "is_acceptable": true,
+    "trained_model_path": "artifacts/saved_model/model.pkl",
+    "transformed_test_path": "data/processed/transformed_test.csv",
+    "thresholds": {
+        "min_accuracy": 0.85,
+        "min_f1_score": 0.85
+    },
+    "model_metrics": {
+        "accuracy": 0.9507010402532791,
+        "precision": 0.9434984520123839,
+        "recall": 0.9713147410358566,
+        "f1_score": 0.9572045543776992,
+        "roc_auc": 0.9916601376919102
+    },
+    "baseline_metrics": {
+        "accuracy": 0.4323835368611488,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+    },
+    "improvement_over_baseline": {
+        "accuracy": 0.5183175033921303,
+        "precision": 0.9434984520123839,
+        "recall": 0.9713147410358566,
+        "f1_score": 0.9572045543776992
+    }
+}

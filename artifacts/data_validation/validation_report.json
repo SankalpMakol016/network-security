@@ -1,0 +1,199 @@
+{
+    "is_valid": true,
+    "train_data_path": "data/processed/train.csv",
+    "test_data_path": "data/processed/test.csv",
+    "column_validation": {
+        "train": {
+            "is_valid": true,
+            "expected_column_count": 31,
+            "actual_column_count": 31,
+            "missing_columns": [],
+            "extra_columns": []
+        },
+        "test": {
+            "is_valid": true,
+            "expected_column_count": 31,
+            "actual_column_count": 31,
+            "missing_columns": [],
+            "extra_columns": []
+        }
+    },
+    "dtype_validation": {
+        "train": {
+            "is_valid": true,
+            "dtype_mismatches": {}
+        },
+        "test": {
+            "is_valid": true,
+            "dtype_mismatches": {}
+        }
+    },
+    "missing_value_validation": {
+        "train": {
+            "is_valid": true,
+            "threshold": 0.0,
+            "columns_exceeding_threshold": {}
+        },
+        "test": {
+            "is_valid": true,
+            "threshold": 0.0,
+            "columns_exceeding_threshold": {}
+        }
+    },
+    "drift_validation": {
+        "is_valid": true,
+        "threshold": 0.05,
+        "drift_details": {
+            "having_IP_Address": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.0013568521031207597
+            },
+            "URL_Length": {
+                "drift_detected": false,
+                "p_value": 0.9999971010402764,
+                "statistic": 0.0067842605156037995
+            },
+            "Shortining_Service": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.001582994120307553
+            },
+            "having_At_Symbol": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.0033921302578018998
+            },
+            "double_slash_redirecting": {
+                "drift_detected": false,
+                "p_value": 0.9999999998789996,
+                "statistic": 0.005201266395296246
+            },
+            "Prefix_Suffix": {
+                "drift_detected": false,
+                "p_value": 0.9995152509457711,
+                "statistic": 0.008480325644504749
+            },
+            "having_Sub_Domain": {
+                "drift_detected": false,
+                "p_value": 0.9999999999598222,
+                "statistic": 0.00508819538670285
+            },
+            "SSLfinal_State": {
+                "drift_detected": false,
+                "p_value": 0.45991477918984003,
+                "statistic": 0.020239710538218002
+            },
+            "Domain_registeration_length": {
+                "drift_detected": false,
+                "p_value": 0.9958579353974752,
+                "statistic": 0.009724106739032113
+            },
+            "Favicon": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.004183627317955676
+            },
+            "port": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.0013568521031207597
+            },
+            "HTTPS_token": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.003844414292175486
+            },
+            "Request_URL": {
+                "drift_detected": false,
+                "p_value": 0.2689286131324479,
+                "statistic": 0.023744911804613297
+            },
+            "URL_of_Anchor": {
+                "drift_detected": false,
+                "p_value": 0.9997752665277037,
+                "statistic": 0.008141112618724558
+            },
+            "Links_in_tags": {
+                "drift_detected": false,
+                "p_value": 0.9995152509457711,
+                "statistic": 0.008480325644504749
+            },
+            "SFH": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.002939846223428313
+            },
+            "Submitting_to_email": {
+                "drift_detected": false,
+                "p_value": 0.9999953843756324,
+                "statistic": 0.006897331524197196
+            },
+            "Abnormal_URL": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.0023744911804613297
+            },
+            "Redirect": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.0012437810945273632
+            },
+            "on_mouseover": {
+                "drift_detected": false,
+                "p_value": 0.9999999999598222,
+                "statistic": 0.00508819538670285
+            },
+            "RightClick": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.00011307100859339665
+            },
+            "popUpWidnow": {
+                "drift_detected": false,
+                "p_value": 0.9999999991050752,
+                "statistic": 0.005427408412483039
+            },
+            "Iframe": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.0020352781546811396
+            },
+            "age_of_domain": {
+                "drift_detected": false,
+                "p_value": 0.9914952304622426,
+                "statistic": 0.010289461781999095
+            },
+            "DNSRecord": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.0024875621890547263
+            },
+            "web_traffic": {
+                "drift_detected": false,
+                "p_value": 0.5733052694150307,
+                "statistic": 0.01854364540931705
+            },
+            "Page_Rank": {
+                "drift_detected": false,
+                "p_value": 0.9876237011526984,
+                "statistic": 0.010628674807779286
+            },
+            "Google_Index": {
+                "drift_detected": false,
+                "p_value": 0.9999953843756324,
+                "statistic": 0.006897331524197196
+            },
+            "Links_pointing_to_page": {
+                "drift_detected": false,
+                "p_value": 0.9996208033369954,
+                "statistic": 0.008367254635911352
+            },
+            "Statistical_report": {
+                "drift_detected": false,
+                "p_value": 1.0,
+                "statistic": 0.0016960651289009499
+            }
+        }
+    }
+}
