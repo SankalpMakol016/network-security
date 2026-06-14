@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+
+.git/
+.gitignore
+
+logs/
+
+saved_models/
+
+*.pyc
+
+.env
