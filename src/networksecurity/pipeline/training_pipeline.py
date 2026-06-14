@@ -8,6 +8,8 @@ import os
 from networksecurity.cloud.s3_syncer import S3Syncer
 load_dotenv()
 aws_bucket_url = os.getenv("AWS_BUCKET_URL")
+if aws_bucket_url is None:
+    raise ValueError("AWS_BUCKET_URL not found in .env")
 
 
 class TrainingPipeline:
@@ -25,11 +27,11 @@ class TrainingPipeline:
 
         S3Syncer().sync_folder_to_s3(
 
-            folder_path="saved_models",
+        folder_path="artifacts/saved_model",
 
-            aws_bucket_url=f"{aws_bucket_url}/saved_models"
+        aws_bucket_url=f"{aws_bucket_url}/saved_models"
 
-        )
+    )
     def run(self) -> None:
         data_ingestion_artifact = DataIngestion().initiate_data_ingestion()
         data_validation_artifact = DataValidation(
