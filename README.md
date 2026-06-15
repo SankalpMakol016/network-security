@@ -530,13 +530,13 @@ The `networksecurity` private ECR repository holds 4 image layers with `latest` 
 
 `NetworkSecurity` instance (`i-048984847bbf572e0`, `t3.small`, `ap-south-1b`) in **Running** state with public IP `13.204.46.129`. The stopped `student-perfor...` instance from a previous project is also visible.
 
-![Amazon EC2 Instances](screenshots/ec2-instance-list.png)
+![Amazon EC2 Instances](screenshots/aws-ec2-instance-list.png)
 
 ### Amazon EC2 — Instance Details
 
 Instance details confirm public IPv4 `13.204.46.129`, private IP `172.31.3.70`, VPC assignment, and Linux/UNIX AMI platform.
 
-![Amazon EC2 Instance Details](screenshots/ec2-instance-details.png)
+![Amazon EC2 Instance Details](screenshots/aws-ec2-instance-details.png)
 
 ### EC2 Terminal — Docker Image Pulled
 
