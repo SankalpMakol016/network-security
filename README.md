@@ -512,49 +512,49 @@ Push to `main`. GitHub Actions handles the rest: runs integration checks, builds
 
 The `networksecurity` private ECR repository holds 4 image layers with `latest` tagged at 968.10 MB (AES-256 encrypted), stored in the `ap-south-1` region.
 
-![Amazon ECR Private Repositories](screenshots/ecr_repositories.png)
+![Amazon ECR Private Repositories](screenshots/aws-ecr-repository.png)
 
 ### Amazon ECR — Image History
 
 `networksecurity:latest` built at `02:25:30 UTC+05:5` alongside prior image index and layer variants, confirming multi-platform buildx push behavior.
 
-![Amazon ECR Image History](screenshots/ecr_images.png)
+![Amazon ECR Image History](screenshots/aws-ecr-image-history.png)
 
 ### Amazon S3 — Artifact Storage
 
 `network-security-bucket1` created on June 15, 2026 in `ap-south-1` stores training artifacts synced via `S3Syncer` after each successful pipeline run.
 
-![Amazon S3 Bucket](screenshots/s3_bucket.png)
+![Amazon S3 Bucket](screenshots/aws-s3-bucket.png)
 
 ### Amazon EC2 — Running Instance
 
 `NetworkSecurity` instance (`i-048984847bbf572e0`, `t3.small`, `ap-south-1b`) in **Running** state with public IP `13.204.46.129`. The stopped `student-perfor...` instance from a previous project is also visible.
 
-![Amazon EC2 Instances](screenshots/ec2_instances.png)
+![Amazon EC2 Instances](screenshots/ec2-instance-list.png)
 
 ### Amazon EC2 — Instance Details
 
 Instance details confirm public IPv4 `13.204.46.129`, private IP `172.31.3.70`, VPC assignment, and Linux/UNIX AMI platform.
 
-![Amazon EC2 Instance Details](screenshots/ec2_details.png)
+![Amazon EC2 Instance Details](screenshots/ec2-instance-details.png)
 
 ### EC2 Terminal — Docker Image Pulled
 
 `docker images` on the EC2 instance confirms the ECR image `209866815360.dkr.ecr.ap-south-1.amazonaws.com/networksecurity:latest` (3.44 GB on disk, 968 MB content) is present and ready.
 
-![Docker Image on EC2](screenshots/ec2_docker_images.png)
+![Docker Image on EC2](screenshots/ec2-docker-images.png)
 
 ### EC2 Terminal — Docker Login
 
 Ubuntu 26.04 LTS terminal connected via EC2 Instance Connect. `docker ps` output confirms the host is live and Docker is operational.
 
-![EC2 Terminal Docker PS](screenshots/ec2_terminal.png)
+![EC2 Terminal Docker PS](screenshots/ec2-terminal-overview.png)
 
 ### Swagger UI — Network Security Prediction API
 
 Auto-generated OpenAPI 3.1 documentation at `/docs` exposes `GET /`, `GET /health`, and `POST /predict` endpoints with full schema definitions for `PredictionResponse`, `HTTPValidationError`, and request bodies.
 
-![Swagger API Docs](screenshots/swagger_ui.png)
+![Swagger API Docs](screenshots/fastapi-swagger-ui.png)
 
 ---
 
